@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     private bool isUseHand = true;
     public bool IsUseHand { get { return isUseHand; } }
 
+    //是否是测试版本，测试版本才可以相应确认键
+    public static bool DEBUG = false;
+
 
     public static GameController _instance;
     public GameObject colliderObject;

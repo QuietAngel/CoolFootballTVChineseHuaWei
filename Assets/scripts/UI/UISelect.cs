@@ -64,7 +64,8 @@ public class UISelect : MonoBehaviour
     }
     void ClickOK(Button btn)
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(SureKey()))
+        KeyCode MIOkKeyCode =GameController.DEBUG?KeyCode.Return:(KeyCode)10;//小米遥控器确认键
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(MIOkKeyCode))
         {
             btn.onClick.Invoke();          //即可自动产生点击动作并调用方法。
         }
@@ -81,9 +82,10 @@ public class UISelect : MonoBehaviour
     {
         if (isHaveClick == false)
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(SureKey()))
+            KeyCode MIOkKeyCode =GameController.DEBUG?KeyCode.Return:(KeyCode)10;//小米遥控器确认键
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(MIOkKeyCode))
             {
-               // print("?????"  + selectLvMenu.levelBtnAll[selectLvMenu.GetLevelData].transform.localPosition +"                 "+mtra.localPosition);
+                // print("?????"  + selectLvMenu.levelBtnAll[selectLvMenu.GetLevelData].transform.localPosition +"                 "+mtra.localPosition);
                 isHaveClick = true;
                 for (int i = 0; i < allBtn.Length; i++)
                 {
